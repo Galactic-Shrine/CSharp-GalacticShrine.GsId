@@ -6,7 +6,7 @@ Biblioteca `.NET net8.0` para generar, analizar, validar y serializar identifica
 
 ## Estado
 
-- Versión: `1.0.0`
+- Versión: `1.0.2`
 - Nivel: producción
 
 ## Puntos clave

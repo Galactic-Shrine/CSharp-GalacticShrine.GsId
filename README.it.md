@@ -6,7 +6,7 @@ Libreria `.NET net8.0` per generare, analizzare, validare e serializzare identif
 
 ## Stato
 
-- Versione: `1.0.0`
+- Versione: `1.0.2`
 - Livello: produzione
 
 ## Punti chiave

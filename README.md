@@ -6,7 +6,7 @@ Bibliothèque .NET `net8.0` pour générer, parser, valider et sérialiser des i
 
 ## Statut
 
-- Version : `1.0.0`
+- Version : `1.0.2`
 - Niveau : production
 
 ## Points clés

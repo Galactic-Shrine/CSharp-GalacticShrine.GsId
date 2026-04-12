@@ -27,26 +27,25 @@ public readonly struct GsId : IEquatable<GsId>, IFormattable
         _Part4 = Part4;
     }
 
-    internal GsId(ReadOnlySpan<byte> Bytes)
-        : this(
-            BinaryPrimitives.ReadUInt64BigEndian(Bytes[..8]),
-            BinaryPrimitives.ReadUInt64BigEndian(Bytes.Slice(8, 8)),
-            BinaryPrimitives.ReadUInt64BigEndian(Bytes.Slice(16, 8)),
-            BinaryPrimitives.ReadUInt64BigEndian(Bytes.Slice(24, 8)))
-    {
-        if (Bytes.Length != GsIdConstants.ByteLength)
-        {
-            throw new ArgumentException($"Un GsId doit contenir exactement {GsIdConstants.ByteLength} octets.", nameof(Bytes));
-        }
+	  internal GsId(ReadOnlySpan<byte> Bytes) {
+
+		    if(Bytes.Length != GsIdConstants.ByteLength) {
+			      throw new ArgumentException($"A GsId must contain exactly {GsIdConstants.ByteLength} bytes.", nameof(Bytes));
+		    }
+
+		    _Part1 = BinaryPrimitives.ReadUInt64BigEndian(Bytes.Slice(0, 8));
+		    _Part2 = BinaryPrimitives.ReadUInt64BigEndian(Bytes.Slice(8, 8));
+		    _Part3 = BinaryPrimitives.ReadUInt64BigEndian(Bytes.Slice(16, 8));
+		    _Part4 = BinaryPrimitives.ReadUInt64BigEndian(Bytes.Slice(24, 8));
     }
 
-    /**
-     * <summary>
-     *   [FR] Représente la valeur GsId vide, composée uniquement de zéros.
-     *   [EN] Represents the empty GsId value, composed only of zeroes.
-     * </summary>
-     **/
-    public static GsId Empty => default;
+	/**
+	 * <summary>
+	 *   [FR] Représente la valeur GsId vide, composée uniquement de zéros.
+	 *   [EN] Represents the empty GsId value, composed only of zeroes.
+	 * </summary>
+	 **/
+	public static GsId Empty => default;
 
     /**
      * <summary>
