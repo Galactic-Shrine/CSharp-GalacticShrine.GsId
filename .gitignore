@@ -1,0 +1,29 @@
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+TestResults/
+coverage/
+coverage.cobertura.xml
+
+# IDE
+.idea/
+.vscode/
+.vs/
+*.swp
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archives
+*.zip
+*.7z
+*.rar
+
+# Logs
+*.log
+logs/
